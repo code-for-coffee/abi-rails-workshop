@@ -4,6 +4,8 @@ Repository for Anita Borg Institute's Learn a Language series: Intro to Rails
 _Saturday, June 18, 2016 from 9:30 AM to 1:30 PM (CDT)_
 
 
+![Creative Commons Non-Commercial License](https://licensebuttons.net/l/by-nc/3.0/88x31.png) Released under the [Creative Commons Non-Commercial License](https://github.com/ga-adi/lab-boilerplate-repository/blob/master/LICENSE)
+
 ---
 
 # Introduction to Ruby
