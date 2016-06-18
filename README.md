@@ -489,3 +489,229 @@ Let's learn how to write conditional statements!
 
 ## Break
 
+
+---
+
+![GeneralAssemb.ly](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/raw/master/images/ga.png "GeneralAssemb.ly")
+
+# Introduction to Rails
+
+### James Traver
+Full Stack Web & Android Engineer @ GA Chicago
+
+---
+
+## Agenda
+#### Part Two: Ruby Ruby on Rails
+
+* Overview
+*	Intro to Ruby on Rails
+* Stop & Watch: Rails app in 10 minutes
+* Together: Create a new Rails application
+* Lab: Your very own Rails app
+* Conclusion
+
+---
+
+## Overview
+
+We're about to dive into Rails. Let's take a minute to stand up and stretch out legs.
+
+---
+
+## Intro: What is Rails
+
+{Rails was created in 2003 by David Heinemeier Hansson, while working on the code base for Basecamp, a project management tool by 37signals. David extracted Ruby on Rails and officially released it as open source code in July of 2004.
+
+
+---
+
+Despite rapid iteration of the Rails code base throughout the years, it has stuck to three basic principles:
+
+* Ruby Programming Language
+* Model-View-Controller Architecture
+* Programmer Happiness
+
+---
+
+## Model - View - Controller
+
+* Models store a model, or representation of data
+* Controllers send and modify data from the model to the view and back
+* Views display that data to the user and allow them to interact
+
+---
+
+Rails was created with the goal of increasing programmers' happiness and productivity levels. In short, with Rails you can get started with a full-stack web application by quickly creating pages, templates and even query functions.
+
+---
+
+Rails heavily emphasizes "Convention over Configuration." This means that a programmer only needs to specify and code out the non-standard parts of a program.
+
+---
+
+Even though Rails comes with its own set of tools and settings, you're certainly not limited to library of rails commands and configurations. Developers are free to configure their applications however they wish, though adopting conventions is certainly recommended.
+
+---
+
+#### A Look Back
+
+Over the years, Rails has indeed made it easier for beginners to dive into web development and build large complex applications. Some popular websites built on Rails include Twitter (at one point), GitHub and, of course, 37signals' very own Basecamp. Rails continues its iterations with an ever-growing developer community and a vibrant ecosystem.
+
+---
+
+## Stop & Watch
+
+### A blog in 10 minutes or less
+
+The goal of the next few minutes is to show the power that Rails gives us – it's actually possible to create a website with a lot of the functionality in less than 5 minutes. We will not detail each step for this app _yet_, but we will create a dynamic website in 5 mins by typing the following commands.
+
+---
+
+I'll talk through this as I demo, and we'll come back and talk about what each of these steps are doing afterwards.
+
+---
+
+```ruby
+rails new blog_app
+cd blog_app
+rails generate scaffold posts title:string content:text author:string
+rake db:create
+rake db:migrate
+rails server
+```
+
+---
+
+Now I'll head over to `localhost:3000/posts`. All of our REST actions are live!
+
+---
+
+## What happened?
+
+* A new Rails app was created
+* I changed into the directory of that app
+* I generated some posts that have content
+* I created the database & setup my data
+* I started my server and browsed to it
+
+---
+
+## Together: Creating a Rails App
+
+For this introduction, we want to create a simple app: a cookbook! The specs for this app are as follows:
+
+* Display a list of all recipes
+* Create new recipes and edit existing recipes
+* Delete recipes
+
+---
+
+Rails follow a pattern called "convention over configuration" - this means that by default, a Rails app expects you to follow specific patterns and folder structures. This means you need to learn these conventions, but also means that once you learn them, you save time by not having to set up a lot of the configuration you'd otherwise need to set up manually.
+
+---
+
+This structure may look a bit complex – there a lot of files, specific naming conventions, and some nested files and folders. We generally don't create this structure manually, but instead use the Rails command line tool, which initializes the app for us:
+
+```bash
+  rails new cookbook
+```
+
+---
+
+Great! We just created the initial folder structure for a Rails app.
+
+> **Note:** By default, if you *do not* add any option for the database, Rails will create the app with SQLite3. While you are working in a local development environment (localhost), you won't notice much of a difference between SQLite3 and PostgreSQL.
+
+---
+
+> Once your app is in production on a remote server, you will *not* use SQLite, and they will often use PostgreSQL. A best practice in web development is to keep development and production environments as similar as possible, so we recommend using PostgreSQL from the start.
+
+---
+
+Now, let's go into the cookbook folder:
+
+```bash
+  cd cookbook
+```
+
+---
+
+Let's look at the contents of this folder (using `ls`), and take a look at the files and folders that were magically created by the `rails new` command:
+
+```
+├── app
+├── bin
+├── config
+├── db
+├── lib
+├── log
+├── public
+├── test
+├── tmp
+└── vendor
+```
+
+---
+
+Some details about this structure:
+
+* 90% of the web app code will be inside the folder `app`, including all of our model, view, and controller logic.
+* `config` contains all the credentials for the DB and other 3rd party services, all the deployment settings, and the specs about how to serve this app over HTTP.
+* `db` will contain all of your migrations
+
+---
+
+
+As Rails is an MVC framework, we will need to have controllers to handle requests and call the database through models.
+
+
+---
+
+In Rails, the controllers are files inside the folder `app/controllers`. If you open this folder, you will see that one controller is already here: the file `application_controller.rb`. This controller does not directly handle HTTP requests, but rather serves as a link between all the controllers we will create, `application_controller.rb` will be the parent of all the controllers in our app.
+
+
+---
+
+Rails has a generator called `scaffold` that will create the whole MVC structure for a resource, let's say that inside the cookbook app, we want the `Products` resource to have a title and a content field, we would type:
+
+```ruby
+
+rails g scaffold products title:string content:text
+
+```
+
+---
+
+Running this command will generate a lot of files, including the controller, the views, the model, and the migration. It will also update the routes file.
+
+Take a look at the controller, it has all the some methods, and these methods already contain the code to query the database through the model `Recipe`.
+
+---
+
+## Together
+
+* Open up your ruby terminal.
+* We're going to build a Rails app together for a zoo.
+* We'll generate everything we need.
+* We'll then browse to it and add, edit, and remove animals from the zoo.
+
+---
+
+## Your challenge: Chirper
+
+* Create a new Rails app called Chirper
+* Generate `chirps`; similar to some other famous website
+* Test your app!
+
+---
+
+
+## Recap
+
+
+---
+
+
+## Wrap-up
+
